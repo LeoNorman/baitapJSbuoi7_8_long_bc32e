@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>BÀI TẬP JS BUỔI 7-8</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css?family=Great+Vibes&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+  <section class="questions" style="margin-bottom: 200px">
+    <!-- THÊM SỐ VÀO MẢNG -->
+    <div class="title">
+      <div class="container">
+        <div class="form-group section-center">
+          <div class="row">
+            <div class="col-6">
+              <input type="number" class="form-control" id="nhapSo_N" placeholder="Nhập số n">
+            </div>
+            <div class="col-6">
+              <button class="btn btn-primary" id="btnThemSo">
+                Thêm số
+              </button>
+            </div>
+          </div>
+          <div class="alert alert-success mt-3" id="arrKetQua">
+            👉
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-center">
+      <!-- BÀI TẬP 1 -->
+      <article class="question">
+
+        <div class="question-title">
+          <p><span class="question_number">1</span> Tổng số dương</p>
+          <button type="button" class="question-btn">
+            <span class="plus-icon">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+            <span class="minus-icon">
+              <i class="fas fa-chevron-up"></i>
+            </span>
+          </button>
+        </div>
+
+        <div class="question-text">
+          <div class="form-group">
+            <div class="alert alert-warning">
+              <p>💡Gợi ý: Làm tương tự demo đã học trên lớp</p>
+            </div>
+            <div class="">
+              <button class="btn btn-primary" id="btnTinhTong">Tính Tổng</button>
+            </div>
+            <div class="alert alert-success mt-3" id="ketQua_b1">
+              👉
+            </div>
+          </div>
+        </div>
+      </article>
+      <!-- BÀI TẬP 2 -->
+      <article class="question">
+
+        <div class="question-title">
+          <p><span class="question_number">2</span> Đếm số dương</p>
+          <button type="button" class="question-btn">
+            <span class="plus-icon">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+            <span class="minus-icon">
+              <i class="fas fa-chevron-up"></i>
+            </span>
+          </button>
+        </div>
+
+        <div class="question-text">
+          <div class="form-group">
+            <div class="alert alert-warning">
+              <p>💡Gợi ý: Làm tương tự demo đã học trên lớp</p>
+            </div>
+            <div class="">
+              <button class="btn btn-primary" id="btnDemSo">Đếm số</button>
+            </div>
+            <div class="alert alert-success mt-3" id="ketQua_b2">
+              👉
+            </div>
+          </div>
+        </div>
+      </article>
+      <!-- BÀI TẬP 3 -->
+      <article class="question">
+
+        <div class="question-title">
+          <p><span class="question_number">3</span> Tìm số nhỏ nhất</p>
+          <button type="button" class="question-btn">
+            <span class="plus-icon">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+            <span class="minus-icon">
+              <i class="fas fa-chevron-up"></i>
+            </span>
+          </button>
+        </div>
+
+        <div class="question-text">
+          <div class="form-group">
+            <div class="alert alert-warning">
+              <p>💡Gợi ý: Làm tương tự demo Sinh Vien đã học trên lớp</p>
+            </div>
+            <div class="">
+              <button class="btn btn-primary" id="btnTimSoNhoNhat">Tìm số nhỏ nhất</button>
+            </div>
+            <div class="alert alert-success mt-3" id="ketQua_b3">
+              👉
+            </div>
+          </div>
+        </div>
+      </article>
+      <!-- BÀI TẬP 4 -->
+      <article class="question">
+
+        <div class="question-title">
+          <p><span class="question_number">4</span> Tìm số dương nhỏ nhất</p>
+          <button type="button" class="question-btn">
+            <span class="plus-icon">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+            <span class="minus-icon">
+              <i class="fas fa-chevron-up"></i>
+            </span>
+          </button>
+        </div>
+
+        <div class="question-text">
+          <div class="form-group">
+            <div class="alert alert-warning">
+              <p>💡Gợi ý:</p>
+              <p>- Tạo thêm 1 mảng mới dùng để chứa các số dương</p>
+              <p>- Dùng vòng lặp để lấy các số dương từ mảng cũ và lưu vào trong mảng mới</p>
+              <p>- Kiểm tra mảng mới có phần tử hay không. Nếu có thì bắt đầu đi tìm giá trị dương nhỏ nhất. Ngược lại thì thông báo không có số dương</p>
+            </div>
+            <div class="">
+              <button class="btn btn-primary" id="btnTimSoDuongNhoNhat">Tìm số dương nhỏ nhất</button>
+            </div>
+            <div class="alert alert-success mt-3" id="ketQua_b4">
+              👉
+            </div>
+          </div>
+        </div>
+      </article>
+      <!-- BÀI TẬP 5 -->
+      <article class="question">
+
+        <div class="question-title">
+          <p><span class="question_number">5</span> Tìm số chẵn cuối cùng</p>
+          <button type="button" class="question-btn">
+            <span class="plus-icon">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+            <span class="minus-icon">
+              <i class="fas fa-chevron-up"></i>
+            </span>
+          </button>
+        </div>
+
+        <div class="question-text">
+          <div class="form-group">
+            <div class="alert alert-warning">
+              <p>💡Gợi ý:</p>
+              <p>- Tạo 1 biến chứa số chẵn cuối cùng</p>
+              <p>- Dùng vòng lặp duyệt mảng và kiểm tra số chẵn. Nếu là số chẵn thì gán vào biến.</p>
+            </div>
+            <div class="">
+              <button class="btn btn-primary" id="btnTimSoChanCuoiCung">Tìm số chẵn</button>
+            </div>
+            <div class="alert alert-success mt-3" id="ketQua_b5">
+              👉
+            </div>
+          </div>
+        </div>
+      </article>
+      <!-- BÀI TẬP 6 -->
+      <article class="question">
+
+        <div class="question-title">
+          <p><span class="question_number">6</span> Đổi chỗ</p>
+          <button type="button" class="question-btn">
+            <span class="plus-icon">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+            <span class="minus-icon">
+              <i class="fas fa-chevron-up"></i>
+            </span>
+          </button>
+        </div>
+
+        <div class="question-text">
+          <div class="form-group">
+            <div class="alert alert-warning">
+              <p>💡Gợi ý:</p>
+              <p>- Vị trí là index của phần tử trong mảng.
+                Để gán giá trị vào 1 vị trí(index) trong mảng => array[index] = giá trị;</p>
+                <p>- Tạo 1 biến tạm, gán giá trị của phần tử ở vị trí 1 vào biến tạm</p>
+                <p>- Gán giá trị của phần tử ở vị trí 2 vào vị trí 1</p>
+                <p>- Gán giá trị biến tạm vào vị trí 2</p>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <input type="number" class="form-control" id="nhapSo_VT1" placeholder="Nhập số vị trí 1" >
+              </div>
+              <div class="col-6">
+                <input type="number" class="form-control" id="nhapSo_VT2" placeholder="Nhập số vị trí 2" >
+              </div>
+            </div>
+            <div class="">
+              <button class="btn btn-primary mt-3" id="btnDoiCho">Đổi chỗ</button>
+            </div>
+            <div class="alert alert-success mt-3" id="ketQua_b6">
+              👉
+            </div>
+          </div>
+        </div>
+      </article>
+      <!-- BÀI TẬP 7 -->
+      <article class="question">
+
+        <div class="question-title">
+          <p><span class="question_number">7</span> Sắp xếp tăng dần</p>
+          <button type="button" class="question-btn">
+            <span class="plus-icon">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+            <span class="minus-icon">
+              <i class="fas fa-chevron-up"></i>
+            </span>
+          </button>
+        </div>
+
+        <div class="question-text">
+          <div class="form-group">
+            <div class="alert alert-warning">
+              <p>💡Gợi ý: Làm tương tự demo Sinh Vien đã học trên lớp</p>
+            </div>
+            <div class="">
+              <button class="btn btn-primary" id="btnSapXep">Sắp xếp</button>
+            </div>
+            <div class="alert alert-success mt-3" id="ketQua_b7">
+              👉
+            </div>
+          </div>
+        </div>
+      </article>
+      <!-- BÀI TẬP 8 -->
+      <article class="question">
+
+        <div class="question-title">
+          <p><span class="question_number">8</span> Tìm số nguyên tố đầu tiên</p>
+          <button type="button" class="question-btn">
+            <span class="plus-icon">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+            <span class="minus-icon">
+              <i class="fas fa-chevron-up"></i>
+            </span>
+          </button>
+        </div>
+
+        <div class="question-text">
+          <div class="form-group">
+            <div class="alert alert-warning">
+              <p>💡Gợi ý:
+
+                Khi tìm thấy số nguyên tố đầu tiên thì dùng lệnh dừng vòng lặp (break) để không duyệt những số tiếp theo trong mảng</p>
+            </div>
+            <div class="">
+              <button class="btn btn-primary" id="btnTimSNT">Tìm số nguyên tố</button>
+            </div>
+            <div class="alert alert-success mt-3" id="ketQua_b8">
+              👉
+            </div>
+          </div>
+        </div>
+      </article>
+      <!-- BÀI TẬP 9 -->
+      <article class="question">
+
+        <div class="question-title">
+          <p><span class="question_number">9</span> Đếm số nguyên</p>
+          <button type="button" class="question-btn">
+            <span class="plus-icon">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+            <span class="minus-icon">
+              <i class="fas fa-chevron-up"></i>
+            </span>
+          </button>
+        </div>
+
+        <div class="question-text">
+          <div class="form-group">
+            <div class="alert alert-warning">
+              <p>💡Gợi ý:
+
+                Sử dụng <a href="#">Number.isInteger</a> để kiểm tra số nguyên</p>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <input type="number" class="form-control" id="nhapSo_9" placeholder="Nhập số">
+              </div>
+              <div class="col-6">
+                <button class="btn btn-primary" id="btnThemSo_9">Thêm số</button>
+              </div>
+            </div>
+            <div class="alert alert-success mt-3" id="ketQua_b9_1">
+              👉
+            </div>
+            <div class="">
+              <button class="btn btn-primary mt-3" id="btnDemSoNguyen">Đếm số nguyên</button>
+            </div>
+            <div class="alert alert-success mt-3" id="ketQua_b9_2">
+              👉
+            </div>
+          </div>
+        </div>
+      </article>
+      <!-- BÀI TẬP 10 -->
+      <article class="question">
+
+        <div class="question-title">
+          <p><span class="question_number">10</span> So sánh số lượng số âm và số dương</p>
+          <button type="button" class="question-btn">
+            <span class="plus-icon">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+            <span class="minus-icon">
+              <i class="fas fa-chevron-up"></i>
+            </span>
+          </button>
+        </div>
+
+        <div class="question-text">
+          <div class="form-group">
+            <div class="alert alert-warning">
+              <p>💡Gợi ý:
+
+                Đếm số lượng sô âm và số dương. Sau đó so sánh số lượng của 2 loại</p>
+            </div>
+            <div class="">
+              <button class="btn btn-primary" id="btnSoSanh">So sánh</button>
+            </div>
+            <div class="alert alert-success mt-3" id="ketQua_b10">
+              👉
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

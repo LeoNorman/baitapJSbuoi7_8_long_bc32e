@@ -131,6 +131,7 @@ document.getElementById('btnTimSoChanCuoiCung').onclick = function () {
     for (var index = arrNumber.length - 1; index >= 0; index--) {
         if (arrNumber[index] % 2 === 0) {
             soChanCuoiCung = arrNumber[index];
+            break;
         } else {
             soChanCuoiCung = -1;
         }

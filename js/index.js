@@ -48,7 +48,7 @@ document.getElementById('btnTinhTong').onclick = function () {
             tong1 += arrNumber[index];
         }
     }
-    ketQua2 = 'Tổng số dương: ' + tong1;
+    ketQua2 = '👉' + 'Tổng số dương: ' + tong1;
     document.getElementById('ketQua_b1').innerHTML = ketQua2;
 }
 
@@ -113,11 +113,11 @@ document.getElementById('btnTimSoDuongNhoNhat').onclick = function () {
             }
         }
         soDuongNhoNhat = newArrNumber[min_index_1];
-        ketQua4 = '👉' + 'Số Dương Nhỏ Nhất: ' + soDuongNhoNhat;
+        ketQua4 = 'Số Dương Nhỏ Nhất: ' + soDuongNhoNhat;
     } else {
-        ketQua4 = '👉' + 'Không có số dương trong mảng'
+        ketQua4 = 'Không có số dương trong mảng'
     }
-    document.getElementById('ketQua_b4').innerHTML = ketQua4;
+    document.getElementById('ketQua_b4').innerHTML = '👉' + ketQua4;
 }
 
 //BÀI TẬP 5: Tìm số chẵn cuối cùng trong mảng. Nếu mảng không có giá trị chẵn thì trả về -1.
@@ -136,7 +136,7 @@ document.getElementById('btnTimSoChanCuoiCung').onclick = function () {
         }
     }
     ketQua5 = 'Số chẵn cuối cùng: ' + soChanCuoiCung;
-    document.getElementById('ketQua_b5').innerHTML = ketQua5;
+    document.getElementById('ketQua_b5').innerHTML = '👉' + ketQua5;
 }
 
 //BÀI TẬP 6: Đổi chỗ 2 giá trị trong mảng theo vị trí (Cho nhập vào 2 vị trí muốn đổi chỗ giá trị).
@@ -157,54 +157,15 @@ document.getElementById('btnDoiCho').onclick = function () {
 }
 
 //BÀI TẬP 7: Sắp xếp mảng theo thứ tự tăng dần.
-var newArrNumber_7 = [];
 document.getElementById('btnSapXep').onclick = function () {
     //input: arrNumber: array
     //output: ketQua7: string
     ketQua7 = '';
     //progress
-    // var newArrNumber_7 = [];
-    for (var index = 0; index < arrNumber.length; index++) {
-        newArrNumber_7.push(timSoNhoNhat(arrNumber));
-        arrNumber = xoaSoNhoNhat(arrNumber);
-    }
-    ketQua7 = 'mảng sau khi sắp xếp: ' + newArrNumber_7;
-    document.getElementById('ketQua_b7').innerHTML = ketQua7;
-}
-
-//tìm số nhỏ nhất
-function timSoNhoNhat(arrNumber) { //input: arrNumber
-    //progress
-    var min_7 = arrNumber[0];
-    var min_index_7 = 0;
-    var soNhoNhat = undefined;
-    for (var i = 1; i < arrNumber.length; i++) {
-        if (arrNumber[i] < min_7) {
-            min_7 = arrNumber[i];
-            min_index_7 = i;
-        }
-    }
-    soNhoNhat = arrNumber[min_index_7];
-    // arrNumber.splice(min_index_7, 1);
-    //output
-    return soNhoNhat;
-}
-
-function xoaSoNhoNhat(arrNumber) { //input: arrNumber
-    //B1: đặt ra 1 giá trị mặc định
-    var indexDel = -1;
-    //B2: duyệt qua mảng
-    for (var index = 0; index < arrNumber.length; index++) {
-        if (arrNumber[index] = timSoNhoNhat(arrNumber)) {
-            indexDel = index;
-            break;
-        }
-    }
-    //kiểm tra biến indexDel
-    if (indexDel !== -1) {
-        var new_arr = arrNumber.splice(indexDel, 1);
-    }
-    return new_arr;
+    var newArrNumber_7 = [];
+    newArrNumber_7 = arrNumber.sort((a, b) => a - b);
+    ketQua7 = 'mảng sau khi sắp xếp: ' + '[' + newArrNumber_7 + ']';
+    document.getElementById('ketQua_b7').innerHTML = '👉' + ketQua7;
 }
 // BÀI TẬP 8: Tìm số nguyên tố đầu tiên trong mảng. Nếu mảng không có số nguyên tố thì trả về – 1.
 document.getElementById('btnTimSNT').onclick = function () {
@@ -231,7 +192,7 @@ document.getElementById('btnTimSNT').onclick = function () {
     if (soNT === 0) {
         soNT = -1;
     }
-    document.getElementById('ketQua_b8').innerHTML = soNT;
+    document.getElementById('ketQua_b8').innerHTML = '👉' + soNT;
 }
 //BÀI TẬP 9: Nhập thêm 1 mảng số thực, tìm xem trong mảng có bao nhiêu số nguyên?
 
@@ -262,7 +223,7 @@ document.getElementById('btnDemSoNguyen').onclick = function () {
         }
     }
     ketQua9_2 = 'Số Nguyên: ' + soNguyen9;
-    document.getElementById('ketQua_b9_2').innerHTML = ketQua9_2;
+    document.getElementById('ketQua_b9_2').innerHTML = '👉' + ketQua9_2;
 }
 
 //BÀI TẬP 10: So sánh số lượng số dương và số lượng số âm xem số nào nhiều hơn.
@@ -288,5 +249,5 @@ document.getElementById('btnSoSanh').onclick = function () {
     } else {
         ketQua10 = 'Số âm ' + '=' + ' Số dương';
     }
-    document.getElementById('ketQua_b10').innerHTML = ketQua10;
+    document.getElementById('ketQua_b10').innerHTML = '👉' + ketQua10;
 }
